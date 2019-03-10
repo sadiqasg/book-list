@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book List</title>
+	<style>
+		h1 {
+			color: green;
+		}
+		td {
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Book List Page</h1>
+	<table>
+		{{#books}}
+			<tr>
+				<td>{{id}}</td>
+				<td>{{title}}</td>
+				<td>{{author}}</td>
+				<td>
+					<a href="/book/edit/{{id}}">edit</a>
+				</td>
+				<td>
+					<form method="POST" action="/book/delete/{{id}}">
+						<button type="submit">delete</button>
+					</form>
+				</td>
+			</tr>
+		{{/books}}
+	</table>
+
+</body>
+</html>
